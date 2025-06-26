@@ -1,4 +1,4 @@
-from stats import get_num_of_words
+from stats import get_num_of_words , count_characters
 
 def get_book_text(_filepath):
     with open(f"books/{_filepath}") as f:
@@ -10,6 +10,8 @@ def get_book_text(_filepath):
 
 def main():
     book_date = get_book_text('frankenstein.txt')
-    print(f"{get_num_of_words(book_date)} words found in the document")
+    word_counts = count_characters(book_date)
+    print( word_counts)
+    #print(f"{get_num_of_words(book_date)} words found in the document")
     
 main()
